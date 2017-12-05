@@ -1,0 +1,24 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.navbar .navbar-brand{
+	margin-left: 100px;
+}
+
+.navbar-collapse{
+	float: right;
+}
+
+.jumbotron{
+	background-image: url("../images/1.jpg") ;
+	background-size: cover;
+	color: black;
+}
+
+
+#id02 .container .articles {
+	background-color: red !important;
+	border : 5px solid  #ccc;
+}

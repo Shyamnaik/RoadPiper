@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    <title>Roadpiper Assignment</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Road<strong>Piper</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav  mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      
+     
+      
+    </ul>
+  
+  </div>
+</nav>
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Best Technology News</h1>
+    <p class="lead">Read from the Best News Website in India.</p>
+  </div>
+</div>
+
+<div class="container articles" id="id02">
+<h4 ></h4>
+<p>by</p>
+<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "hacker_news_stories.json";
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<h4><a href="' + arr[i].url + '">' + 
+        arr[i].title + '</a></h4><p> by ' + arr[i].by+ '</p><p>' + arr[i].type + '     '     + arr[i].time + '</p>';
+    }
+    document.getElementById("id02").innerHTML = out;
+}
+</script>
+
+</body>
+</html>
